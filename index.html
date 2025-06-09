@@ -3,72 +3,1067 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web design agency</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Creative | Award-Winning Web Design Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --accent: #ec4899;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo::after {
+            content: "®";
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            font-weight: 500;
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .menu a:hover {
+            color: white;
+        }
+
+        .menu a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .menu a:hover::after {
+            width: 100%;
+        }
+
+        .mainText {
+            text-align: center;
+            padding: 60px 0;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .heading1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #fff 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .heading2 {
+            font-size: 22px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        .b1 {
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .b1:first-child {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px -10px var(--primary);
+        }
+
+        .b1:first-child:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -10px var(--primary);
+        }
+
+        .b1:last-child {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .b1:last-child:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Main Content Styles */
+        main {
+            position: relative;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section1 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            align-items: center;
+            background-color: white;
+        }
+
+        .article1 {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .article2 {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .article2:hover {
+            transform: translateY(-10px);
+        }
+
+        .img1 {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .article2:hover .img1 {
+            transform: scale(1.03);
+        }
+
+        .heading3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .heading3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .para1 {
+            color: var(--gray);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .aboutUs {
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .aboutUs:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -10px var(--primary);
+        }
+
+        .section2 {
+            background: linear-gradient(to bottom, #f0f9ff 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .section2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23dbeafe' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        .article3 {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .heading4 {
+            font-size: 18px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .heading5 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .element {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .element:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .element::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .boxImage {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .boxContent {
+            padding: 25px;
+        }
+
+        .boxHead1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .boxHead2 {
+            color: var(--gray);
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .boxLink {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .boxLink:hover {
+            gap: 12px;
+            color: var(--primary-dark);
+        }
+
+        .b2 {
+            display: block;
+            margin: 0 auto;
+            padding: 16px 40px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            z-index: 10;
+        }
+
+        .b2:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -10px var(--primary);
+        }
+
+        /* Services Section */
+        .section3 {
+            background-color: white;
+            position: relative;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .service-desc {
+            color: var(--gray);
+            margin-bottom: 25px;
+        }
+
+        /* Contact Section */
+        .section4 {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section4::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232565eb' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .contact-desc {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-value {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 17px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -10px var(--primary);
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 40px;
+            position: relative;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .heading1 {
+                font-size: 50px;
+            }
+            
+            .heading5 {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                gap: 25px;
+            }
+            
+            .heading1 {
+                font-size: 42px;
+            }
+            
+            .heading2 {
+                font-size: 18px;
+            }
+            
+            .heading3 {
+                font-size: 36px;
+            }
+            
+            .heading5 {
+                font-size: 34px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .b1 {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .menu {
+                display: none;
+            }
+            
+            .top {
+                margin-bottom: 60px;
+            }
+            
+            .heading1 {
+                font-size: 36px;
+            }
+            
+            .heading3 {
+                font-size: 30px;
+            }
+            
+            .heading5 {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <div class="top">
-            <div class="logo">Creative</div>
-            <div class="menu">Menu</div>
-        </div>
-        <div class="mainText">
-            <h1 class="heading1">WEB DESIGN AGENCY</h1>
-            <h2 class="heading2">We are an Award Winning Web Design Agency</h2>
-            <span class="buttons"><button class="b1">VIEW OUR PORTFOLIO</button> <button class="b1">START A PROJECT</button></span>
+    <header>
+        <div class="container">
+            <div class="top">
+                <div class="logo">Creative</div>
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="mainText">
+                <h1 class="heading1">WEB DESIGN AGENCY</h1>
+                <h2 class="heading2">We are an Award Winning Web Design Agency</h2>
+                <span class="buttons">
+                    <button class="b1">VIEW OUR PORTFOLIO</button>
+                    <button class="b1">START A PROJECT</button>
+                </span>
+            </div>
         </div>
     </header>
     <main>
         <section class="section1">
-            <article class="article1">
-                <h3 class="heading3">CREATIVE BRAND DESIGN</h3>
-                <p class="para1">Lorem ipsum dolor sit amet consectetur , corrupti explicabo distinctio ducimus ipsa fugit dignissimos. Ratione nam, cumque iure quas provident, magnam maiores, omnis est possimus <br />
-                    
-                 ullam consequatur reprehenderit ea eve sed facilis quis ipsa earum necessitatibus magni vitae blanditiis id, quaerat eveniet enim ullam alias? Laboriosam aperiam suscipit harum at. Expedita, mollitia. Esse, deserunt <br />
-                 quibusdam? Quod saepe mAdipisci, ipsum harum. Ex, ullam quam, nobis repellat obcaecati est quos velit porro voluptatibus debitis inventore! Optio rem qui labore adipisci quidem, atque nisi dolore nesciunt obcaecati ipsam.</p>
-                <button class="aboutUs">ABOUT US</button>
-            </article>
-            <article class="article2"><img src="./Images/mainImg.jpeg" alt="img" class="img1"></article>
+            <div class="container">
+                <div class="section1">
+                    <article class="article1">
+                        <h3 class="heading3">CREATIVE BRAND DESIGN</h3>
+                        <p class="para1">At Creative Agency, we blend innovative design with strategic thinking to craft digital experiences that resonate with your audience. Our award-winning team creates visually stunning websites that drive results and elevate your brand.</p>
+                        <p class="para1">We approach each project with fresh eyes, combining technical expertise with creative vision to deliver solutions that exceed expectations. Our collaborative process ensures your unique brand identity shines through every pixel.</p>
+                        <button class="aboutUs"><i class="fas fa-arrow-right"></i> ABOUT US</button>
+                    </article>
+                    <article class="article2">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Creative team working" class="img1">
+                    </article>
+                </div>
+            </div>
         </section>
         <section class="section2">
-            <article class="article3">
-                <h3 class="heading4">RECENT WEB DESIGN PROJECTS</h3>
-                <h2 class="heading5">BEAUTIFUL & INTERACTIVE WEB DESIGN</h2>
-            </article>
-            <article class="boxes">
-                <section class="element1">
-                    <h3 class="boxHead1">NATURE RESERVE</h3>
-                    <h5 class="boxHead2">Design / Ecommerce / Hosting</h5>
-                    <img src="./Images/mountain.jpeg" alt="" class="boxImage">
-                </section>
-                <section class="element2">
-                    <h3 class="boxHead1">FIRST JETS</h3>
-                    <h5 class="boxHead2">Brand Identity / Design / Development</h5>
-                    <img src="./Images/jet.jpg" alt="" class="boxImage">
-                </section>
-                <section class="element3">
-                    <h3 class="boxHead1">4 MEDIA GROUP</h3>
-                    <h5 class="boxHead2">Design / Development</h5>
-                    <img src="./Images/4media.jpeg" alt="" class="boxImage">
-                </section>
-                <section class="element4">
-                    <h3 class="boxHead1">INTERCOUNTY</h3>
-                    <h5 class="boxHead2">Design / Development / Hosting</h5>
-                    <img src="./Images/car.jpeg" alt="" class="boxImage">
-                </section>
-            </article>
-            
-            <botton class="b2">VIEW FULL PORTFOLIO</botton>
-            
+            <div class="container">
+                <article class="article3">
+                    <h3 class="heading4">RECENT WEB DESIGN PROJECTS</h3>
+                    <h2 class="heading5">BEAUTIFUL & INTERACTIVE WEB DESIGN</h2>
+                </article>
+                <article class="boxes">
+                    <section class="element">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Nature Reserve website" class="boxImage">
+                        <div class="boxContent">
+                            <h3 class="boxHead1">NATURE RESERVE</h3>
+                            <h5 class="boxHead2">Design / Ecommerce / Hosting</h5>
+                            <a href="#" class="boxLink">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </section>
+                    <section class="element">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="First Jets website" class="boxImage">
+                        <div class="boxContent">
+                            <h3 class="boxHead1">FIRST JETS</h3>
+                            <h5 class="boxHead2">Brand Identity / Design / Development</h5>
+                            <a href="#" class="boxLink">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </section>
+                    <section class="element">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="4 Media Group website" class="boxImage">
+                        <div class="boxContent">
+                            <h3 class="boxHead1">4 MEDIA GROUP</h3>
+                            <h5 class="boxHead2">Design / Development</h5>
+                            <a href="#" class="boxLink">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </section>
+                    <section class="element">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Intercounty website" class="boxImage">
+                        <div class="boxContent">
+                            <h3 class="boxHead1">INTERCOUNTY</h3>
+                            <h5 class="boxHead2">Design / Development / Hosting</h5>
+                            <a href="#" class="boxLink">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </section>
+                </article>
+                <button class="b2">VIEW FULL PORTFOLIO</button>
+            </div>
         </section>
-        <section class="section3"></section>
-        <section class="section4"></section>
+        <section class="section3">
+            <div class="container">
+                <div class="services-header">
+                    <h3 class="heading4">OUR EXPERTISE</h3>
+                    <h2 class="heading5">CREATIVE SERVICES WE PROVIDE</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="service-title">Web Design & Development</h3>
+                        <p class="service-desc">Custom websites built with the latest technologies, optimized for performance and user experience.</p>
+                        <a href="#" class="boxLink">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-title">Mobile App Development</h3>
+                        <p class="service-desc">Native and cross-platform mobile applications designed for iOS and Android devices.</p>
+                        <a href="#" class="boxLink">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="service-title">Digital Marketing</h3>
+                        <p class="service-desc">Comprehensive strategies to increase your online visibility and drive targeted traffic.</p>
+                        <a href="#" class="boxLink">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3 class="contact-title">Get in Touch</h3>
+                        <p class="contact-desc">Have a project in mind? Let's collaborate to create something extraordinary together.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Our Location</div>
+                                    <div class="contact-value">123 Design Street, Creative District, CA 90210</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Call Us</div>
+                                    <div class="contact-value">+1 (555) 123-4567</div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Email Us</div>
+                                    <div class="contact-value">hello@creative-agency.com</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-input" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
-
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">Creative</div>
+                    <div class="footer-about">
+                        <p>Award-winning web design agency crafting digital experiences that captivate audiences and drive business growth.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Brand Identity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Design Street, CA</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@creative.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Creative Agency. All rights reserved.
+            </div>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.element, .service-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+                
+                el.classList.add('animate');
+            });
+            
+            const animateOnScroll = document.querySelectorAll('.animate-on-scroll');
+            animateOnScroll.forEach(el => {
+                observer.observe(el);
+            });
+            
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
